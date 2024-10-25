@@ -5,6 +5,8 @@
   "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "prisma generate && prisma migrate deploy && tsc",
+    "start": "node ./dist/index",
     "dev": "nodemon ./src/index"
   },
   "author": "Juan Isturiz",
