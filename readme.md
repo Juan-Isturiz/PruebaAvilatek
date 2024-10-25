@@ -46,12 +46,21 @@ Para la autenticación de usuario se hizo uso de la librería `jsonwebtoken` par
 ### Esquema de Prisma
 Se Hizo el esquema de `prisma` pensando en la escalabilidad del sistema y tomando en cuenta la adición de nuevos tipos de usuario entre otras cosas.
 ```
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
 model User {
   id        Int        @id @default(autoincrement())
   email     String     @unique
   name      String
   password  String
-  role      String
+  role      UserRoles
   status    UserStatus @default(ACTIVE)
   lastLogin DateTime   @default(now())
   Order     Order[]
@@ -100,4 +109,10 @@ enum UserStatus {
   SUSPENDED
   DELETED
 }
+
+enum UserRoles {
+  ADMIN
+  CLIENT
+}
+
  ```
