@@ -6,7 +6,7 @@ Se usó la librería `express` para la construcción principal de las rutas porq
 
 Por otra parte, la API se hizo en `typescript` para tener un mejor manejo de tipos de datos y hacer más fácil el proceso de programación al estar al tanto de los errores sin necesidad de compilar.
 
-Se usó `dotenv` para guardar las variables de entorno sin subirlas necesariamente a github (_en este caso se subirá igualmente con fine de evaluación_).
+Se usó `dotenv` para guardar las variables de entorno sin subirlas necesariamente a github (_en este caso se subirá igualmente con fines de evaluación_).
 
 Para el almacenamiento de datos se hizo uso de `postgresql` por ser la herramienta con la que tenfo más experiencia als er una manejador de base de datos relacionales. Además de esto se uso como ORM `prisma` dadas las especificaciones de evaluación.
 
